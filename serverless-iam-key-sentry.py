@@ -5,12 +5,8 @@ from botocore.exceptions import ClientError
 
 # Set the global variables
 globalVars  = {}
-globalVars['Owner']                 = "Miztiik"
-globalVars['Environment']           = "Test"
-globalVars['REGION_NAME']           = "ap-south-1"
-globalVars['tagName']               = "Valaxy-Serverless-IAM-Key-Sentry"
-globalVars['key_age']               = "90"
-globalVars['SecOpsTopicArn']        = ""
+globalVars['SecOpsTopicArn'] = ""
+globalVars['REGION_NAME'] = os.environ['AWS_REGION']
 
 def get_usr_old_keys( keyAge ):
     client = boto3.client('iam',region_name = globalVars['REGION_NAME'])
